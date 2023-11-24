@@ -23,7 +23,7 @@ export function CustomDatePicker({ isEndDate }: CustomDatePickerProps) {
         }
       )}
     >
-      <span className="text-xs whitespace-nowrap absolute -top-2 left-3 px-1 dark:bg-gray-900 bg-white text-black text-opacity-60 dark:text-white dark:opacity-100">
+      <span className="text-sm font-serif whitespace-nowrap absolute -top-2 left-3 px-1 dark:bg-gray-900 bg-white text-black text-opacity-60 dark:text-white dark:opacity-100">
         Start Date
       </span>
       <button
@@ -57,7 +57,7 @@ export function CustomDatePicker({ isEndDate }: CustomDatePickerProps) {
       {isEndDate && (
         <>
           <span className="w-2 border-2 border-gray-500 mr-6" />
-          <span className="text-xs whitespace-nowrap absolute -top-2 right-3 px-1 dark:bg-gray-900 bg-white text-black text-opacity-60 dark:text-white dark:opacity-100">
+          <span className="text-sm font-serif whitespace-nowrap absolute -top-2 right-3 px-1 dark:bg-gray-900 bg-white text-black text-opacity-60 dark:text-white dark:opacity-100">
             End Date
           </span>
           <button

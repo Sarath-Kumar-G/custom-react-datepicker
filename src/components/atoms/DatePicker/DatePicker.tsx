@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -26,9 +26,18 @@ export function CustomDatePicker({
     }
   );
 
+  const handleChangeStartDate = (date: Date) => setStartDate(date);
+  const handleChangeEndDate = (date: Date) => setEndDate(date);
+
+  useEffect(() => {
+    const newEndDateAfterStartDateSelection =
+      endDate && startDate && startDate.getTime() > endDate.getTime();
+    newEndDateAfterStartDateSelection ? handleChangeEndDate(startDate) : null;
+  }, [startDate, endDate]);
+
   return (
     <div className={datePickerDynamicClasses}>
-      <span className="text-sm font-serif whitespace-nowrap absolute -top-2 left-3 px-1 bg-white text-black text-opacity-60">
+      <span className="text-sm font-semibold	 whitespace-nowrap absolute -top-3 left-3 px-1 bg-white text-black text-opacity-60">
         Start Date
       </span>
       <button
@@ -41,7 +50,7 @@ export function CustomDatePicker({
       >
         <DatePicker
           placeholderText="Start Date"
-          calendarClassName="!border-none !shadow !flex"
+          calendarClassName="!shadow-lg !flex !border-none"
           className="focus:outline-none w-fit text-sm font-medium"
           dateFormat="EEEE, dd MMM yyyy"
           minDate={new Date()}
@@ -50,20 +59,14 @@ export function CustomDatePicker({
           selected={startDate}
           selectsStart
           shouldCloseOnSelect
-          onBlur={() => {
-            setIsStartDateOpen(false);
-            setIsEndDateOpen(false);
-          }}
           startDate={startDate}
-          onChange={(date: Date) => {
-            setStartDate(date);
-          }}
+          onChange={(date: Date) => handleChangeStartDate(date)}
         />
       </button>
       {isEndDate && (
         <>
           <span className="w-1 border-2 border-red-500 mr-5 ml-3" />
-          <span className="text-sm font-serif whitespace-nowrap absolute -top-2 right-3 px-1 bg-white text-black text-opacity-60">
+          <span className="text-sm font-semibold whitespace-nowrap absolute -top-3 right-3 px-1 bg-white text-black text-opacity-60">
             End Date
           </span>
           <button
@@ -75,24 +78,18 @@ export function CustomDatePicker({
             aria-label="Select departure date"
           >
             <DatePicker
-              calendarClassName="!border-none !shadow !flex"
+              calendarClassName="!shadow-lg !flex !border-none"
               placeholderText="End Date"
               className="focus:outline-none w-fit text-sm font-medium"
               dateFormat="EEEE, dd MMM yyyy"
-              minDate={new Date()}
+              minDate={startDate}
               monthsShown={2}
               popperClassName="!py-6"
               selected={endDate}
               selectsStart
               shouldCloseOnSelect
-              onBlur={() => {
-                setIsStartDateOpen(false);
-                setIsEndDateOpen(true);
-              }}
               startDate={endDate}
-              onChange={(date: Date) => {
-                setEndDate(date);
-              }}
+              onChange={(date: Date) => handleChangeEndDate(date)}
             />
           </button>
         </>

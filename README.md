@@ -21,17 +21,6 @@ Our journey began while working on a project where the need for an efficient and
 
 Developers are encouraged to explore and adapt this component to fit their specific needs. The code is designed to be flexible, allowing for easy modifications and enhancements.
 
-## More about `<CustomDatePicker/>`.
-- Independent and reusable date picker component built for `Next.js` and `React.js` Projects with `TypeScript`.
-- Dynamic props to render more features of the component. ex: end date, minDate, ...
-- `isEndDate` flag will render the endDate picker. in case of website expects the start and end date functionality.
-- `endDate` will be alway >= `startDate`.
-- `DatePopper` can be customizable by passing `additionalDatePickerClasses` prop to customize popper styles.
-- Used [data-fns] for date formatting and other operations instead of other heavy libraries.
-- No Material UI.
-- used `global.css` in case global css styles are needed.
-- I'm using RTL for Unit testing
-
 _p.s_: _I'll be adding more features and solid unit test cases for this component in the next release_
 
 ## Getting Started

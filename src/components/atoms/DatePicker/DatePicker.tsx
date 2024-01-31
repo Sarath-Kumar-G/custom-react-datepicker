@@ -54,7 +54,7 @@ export function CustomDatePicker({
           className="focus:outline-none w-fit text-sm font-medium"
           dateFormat="EEEE, dd MMM yyyy"
           minDate={new Date()}
-          monthsShown={2}
+          monthsShown={isEndDate ? 2 : 1}
           popperClassName="!py-6"
           selected={startDate}
           selectsStart

@@ -1,6 +1,6 @@
 ## Overview
 
-Welcome to our `<CustomDatePicker/>` component, an innovative solution crafted using the `react-datepicker` library and styled elegantly with `Tailwind CSS 3`. This component is a direct outcome of the challenges we faced while integrating various date-picking functionalities into web projects. It's tailored to streamline the date selection process, especially for booking flows, and has been refined through insights and inputs from expert developer.
+Welcome to our `<CustomDatePicker/>` component, an innovative solution crafted using the `react-datepicker` library and styled elegantly with `Tailwind CSS 3`. This component is a direct outcome of the challenges we faced while integrating various date-picking functionalities into web projects. It's tailored to streamline the date selection process, especially for booking flows, and has been refined through insights and inputs from an expert developer.
 
 ## Introduction
 `<CustomDatePicker/>` is a versatile, independent, and reusable component designed to elevate the date-picking experience in your `Next.js` and `React.js` projects. This component is meticulously crafted with `TypeScript`, ensuring type safety and efficient integration.
@@ -20,8 +20,6 @@ Our journey began while working on a project where the need for an efficient and
 ## Customization and Usage
 
 Developers are encouraged to explore and adapt this component to fit their specific needs. The code is designed to be flexible, allowing for easy modifications and enhancements.
-
-_p.s_: _I'll be adding more features and solid unit test cases for this component in the next release_
 
 ## Getting Started
 
